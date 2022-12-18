@@ -24,5 +24,6 @@ public class User
     public Languages Language { get; set; }
     public Address? Address { get; set; }
     public Settings? Settings { get; set; }
+    public DateOnly BirthDate { get; set; }
 
 }
