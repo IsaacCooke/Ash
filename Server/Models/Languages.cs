@@ -2,8 +2,9 @@ namespace Server.Models;
 
 public enum Languages
 {
-    English,
-    French,
-    Spanish,
-    German,
+    // Null: 0
+    English, // 1
+    French, // 2
+    Spanish, // 3
+    German, // 4
 }

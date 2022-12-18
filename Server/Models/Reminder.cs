@@ -6,9 +6,6 @@ namespace Server.Models;
 
 public class Reminder
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string? ReminderId { get; set; }
     [BsonElement("Name")]
     [StringLength(maximumLength: 50, MinimumLength = 1)]
     public string? Title { get; set; }
@@ -21,11 +18,12 @@ public class Reminder
 
 public enum Repeat
 {
-    None,
-    Daily,
-    Weekly,
-    Monthly,
-    Weekdays,
-    Weekends,
-    Yearly
+    // Null: 0
+    None, // 1
+    Daily, // 2
+    Weekly, // 3
+    Monthly, // 4
+    Weekdays, // 5
+    Weekends, // 6
+    Yearly // 7
 }

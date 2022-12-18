@@ -6,13 +6,11 @@ namespace Server.Models;
 
 public class Address
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string? AddressId { get; set; }
-    public int HouseNumber { get; set; }
+    public int? HouseNumber { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]
+    [BsonElement("Name")]
     public string? HouseName { get; set; }
-    [StringLength(maximumLength: 50, MinimumLength = 1)]
+    [StringLength(maximumLength: 50, MinimumLength = 0)]
     public string? Street { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]
     public string? County { get; set; }
