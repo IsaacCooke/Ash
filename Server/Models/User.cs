@@ -1,15 +1,11 @@
 using System.ComponentModel.DataAnnotations;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 
 namespace Server.Models;
 
 public class User
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
+    public int Id { get; set; }
     public string? UserId { get; set; }
-    [BsonElement("Name")]
     [StringLength(maximumLength: 50, MinimumLength = 1)]
     public string? FirstName { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]

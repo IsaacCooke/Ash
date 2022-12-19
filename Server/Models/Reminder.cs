@@ -1,12 +1,10 @@
 using System.ComponentModel.DataAnnotations;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 
 namespace Server.Models;
 
 public class Reminder
 {
-    [BsonElement("Name")]
+    public int Id { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]
     public string? Title { get; set; }
     public DateTime DateDue { get; set; }
