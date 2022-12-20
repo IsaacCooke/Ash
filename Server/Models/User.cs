@@ -5,7 +5,6 @@ namespace Server.Models;
 public class User
 {
     public int Id { get; set; }
-    public string? UserId { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]
     public string? FirstName { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]

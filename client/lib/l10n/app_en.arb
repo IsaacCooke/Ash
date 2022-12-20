@@ -1,0 +1,7 @@
+{
+    "ash": "Ash",
+    "helloWorld": "Hello World",
+    "@ash": {
+        "description": "The name of the AI"
+    }
+}
