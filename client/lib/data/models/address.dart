@@ -3,6 +3,12 @@ import 'dart:html';
 
 import 'package:client/data/models/location.dart';
 
+List<Address> addressFromJson(String str) =>
+  List<Address>.from(json.decode(str).map((x) => Address.fromJson(x)));
+
+String addressToJson(List<Address> data) =>
+  json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
 class Address{
   final int id;
   final int houseNumber;

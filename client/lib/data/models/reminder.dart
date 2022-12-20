@@ -2,7 +2,11 @@ import 'dart:convert';
 
 import 'package:client/data/models/location.dart';
 
+List<Reminder> reminderFromJson(String str) =>
+  List<Reminder>.from(json.decode(str).map((x) => Reminder.fromJson(x)));
 
+String reminderToJson(List<Reminder> data) =>
+  json.encode(List<dynamic>.from(data.map((e) => e.toJson())));
 
 class Reminder{
   final int id;
