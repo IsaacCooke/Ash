@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:client/themes/color_schemes.g.dart';
+import 'package:client/pages/layout.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) =>
         AppLocalizations.of(context)!.ash,
       localizationsDelegates: const [
@@ -25,22 +30,10 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // Generic English
         Locale('es', ''), // Generic Spanish
       ],
-      home: MyHomePage(),
+      home: const Layout(),
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget{
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context){
-    return Column(
-      children: [
-        Text(AppLocalizations.of(context)!.helloWorld),
-      ],
+      navigatorKey: navigatorKey,
     );
   }
 }

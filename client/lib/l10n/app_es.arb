@@ -1,4 +1,7 @@
 {
     "ash": "Ash",
-    "helloWorld": "Hola Mundo"
+    "helloWorld": "Hola Mundo",
+    "settings": "Ajustes",
+    "home": "Casa",
+    "reminders": "Recordatorios"
 }
