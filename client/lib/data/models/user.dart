@@ -13,32 +13,32 @@ String userToJson(List<User> data) =>
 
 
 class User{
-  final int id;
+  final int? id;
   final String firstName;
   final String lastName;
   final String email;
   final String password;
   final String phoneNumber;
   final bool hasAgreedToConditions;
-  final Languages language;
-  final Address address;
-  final Settings settings;
+  final Languages? language;
+  final Address? address;
+  final Settings? settings;
   final DateTime birthDate;
-  final List<Reminder> reminders;
+  final List<Reminder>? reminders;
 
   const User({
-    required this.id,
+    this.id,
     required this.firstName,
     required this.lastName,
     required this.email,
     required this.password,
     required this.phoneNumber,
     required this.hasAgreedToConditions,
-    required this.language,
-    required this.address,
-    required this.settings,
+    this.language,
+    this.address,
+    this.settings,
     required this.birthDate,
-    required this.reminders,
+    this.reminders,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => User(
@@ -65,8 +65,8 @@ class User{
     'phoneNumber': phoneNumber,
     'hasAgreedToConditions': hasAgreedToConditions,
     'language': language,
-    'address': address.toJson(),
-    'settings': settings.toJson(),
+    'address': address!.toJson(),
+    'settings': settings!.toJson(),
     'birthDate': birthDate,
     'reminders': reminders,
   };

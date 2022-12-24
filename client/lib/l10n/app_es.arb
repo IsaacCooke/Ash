@@ -3,5 +3,15 @@
     "helloWorld": "Hola Mundo",
     "settings": "Ajustes",
     "home": "Casa",
-    "reminders": "Recordatorios"
+    "reminders": "Recordatorios",
+    "login": "Acceso",
+    "email": "Email",
+    "firstName": "Primer Nombre",
+    "lastName": "Apellido",
+    "phoneNumber": "Número de Teléfono",
+    "enterYour": "Entra tu",
+    "password": "Contraseña",
+    "confirmYourPassword": "Confirmar la Contraseña",
+    "dateOfBirth": "Fecha de Cumpleaños",
+    "submit": "Enviar"
 }

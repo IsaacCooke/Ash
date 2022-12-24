@@ -6,5 +6,15 @@
     },
     "settings": "Settings",
     "home": "Home",
-    "reminders": "Reminders"
+    "reminders": "Reminders",
+    "login": "Login",
+    "email": "Email",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number",
+    "enterYour": "Enter your",
+    "password": "Password",
+    "confirmYourPassword": "Confirm your password",
+    "dateOfBirth": "Date of Birth",
+    "submit": "Submit"
 }

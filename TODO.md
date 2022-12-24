@@ -8,3 +8,4 @@ This file is for listing known bugs/ tasks that need to be done to improve the p
 * In ios build files, use XCode to add localization support
 * Hide id in user service get user before release build
 * Add internet, microphone and speaker permissions to ios config files and Android manifest files.
+* Sort out password exception in login.dart
