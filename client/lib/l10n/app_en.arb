@@ -16,5 +16,8 @@
     "password": "Password",
     "confirmYourPassword": "Confirm your password",
     "dateOfBirth": "Date of Birth",
-    "submit": "Submit"
+    "submit": "Submit",
+    "signUp": "Sign Up",
+    "byCheckingThisBoxYouConfirmYouHaveReadThe": "By checking this box, you confirm you have read the",
+    "termsAndConditions": "terms and conditions"
 }

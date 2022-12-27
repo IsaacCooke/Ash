@@ -13,5 +13,8 @@
     "password": "Contraseña",
     "confirmYourPassword": "Confirmar la Contraseña",
     "dateOfBirth": "Fecha de Cumpleaños",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "signUp": "Inscribirse",
+    "byCheckingThisBoxYouConfirmYouHaveReadThe": "Al marcar esta casilla, confirma que ha leído el",
+    "termsAndConditions": "Términos y condiciones"
 }

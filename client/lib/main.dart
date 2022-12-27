@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:client/themes/color_schemes.g.dart';
 import 'package:client/pages/layout.dart';
-import 'package:client/widgets/login.dart';
+import 'package:client/widgets/sign_up.dart';
 
 import 'global/global.dart' as globals;
 
@@ -16,16 +16,6 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-  late Widget startScreen;
-
-  void initState(){
-    if(globals.getIsSignedIn){
-      startScreen = Layout();
-    } else {
-      startScreen = Login();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
 
@@ -34,7 +24,7 @@ class MyApp extends StatelessWidget {
       if(globals.getIsSignedIn == true){
         startScreen = Layout();
       } else {
-        startScreen = Login();
+        startScreen = SignUp();
       }
       return startScreen;
     }
