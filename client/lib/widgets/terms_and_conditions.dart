@@ -44,8 +44,8 @@ class TermsAndConditions extends StatelessWidget{
                     "End User License Agreement",
                     style: titleStyle,
                   ),
-                  Text("This copy of ASH (\"the product\") and accompanying documentation is licenced and not sold. This product is protected by copyright laws and treaties, as well as laws and treaties relating to other forms of interlecutal property" +
-                  "Isaac Cooke owns interlecutal property rights to the product. The Licensee's (\"you\" or \"your\") license to download, use, copy or change the product is subject to these rights and to all te terms and conditions in this end user license agreement (\"agreement\")."
+                  Text("This copy of ASH (\"the product\") and accompanying documentation is licensed and not sold. This product is protected by copyright laws and treaties, as well as laws and treaties relating to other forms of interlecutal property" +
+                  "Isaac Cooke owns intellectual property rights to the product. The Licensee's (\"you\" or \"your\") license to download, use, copy or change the product is subject to these rights and to all te terms and conditions in this end user license agreement (\"agreement\")."
                   ),
                 ],
               ),
