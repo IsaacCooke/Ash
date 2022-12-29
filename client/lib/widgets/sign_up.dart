@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:client/data/models/user.dart';
 import 'package:client/data/services/user_service.dart';
 import 'package:client/widgets/login.dart';
+import 'package:client/widgets/terms_and_conditions.dart';
 
 class SignUp extends StatefulWidget{
   const SignUp({ super.key });
@@ -81,7 +82,7 @@ class SignUpState extends State<SignUp>{
                 controller: _passwordController2,
                 decoration: InputDecoration(
                   hintText: AppLocalizations.of(context)!.confirmYourPassword,
-                  labelText: AppLocalizations.of(context)!.password,
+                  labelText: AppLocalizations.of(context)!.confirmPassword,
                 ),
               ),
               TextFormField(
@@ -113,7 +114,16 @@ class SignUpState extends State<SignUp>{
                 },
               ),
               CheckboxListTile(
-                title: Text("${AppLocalizations.of(context)!.byCheckingThisBoxYouConfirmYouHaveReadThe} ${AppLocalizations.of(context)!.termsAndConditions}"),
+                // title: Text("${AppLocalizations.of(context)!.byCheckingThisBoxYouConfirmYouHaveReadThe} ${AppLocalizations.of(context)!.termsAndConditions}"),
+                title: ElevatedButton(
+                  child: Text("${AppLocalizations.of(context)!.byCheckingThisBoxYouConfirmYouHaveReadThe} ${AppLocalizations.of(context)!.termsAndConditions}"),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: ((context) => const TermsAndConditions())),
+                    );
+                  },
+                ),
                 value: _hasAgreedToConditions,
                 onChanged: (bool? value){
                   setState(() {
@@ -149,7 +159,6 @@ class SignUpState extends State<SignUp>{
 
                     UserService userService = UserService();
                     userService.createUser(newUser);
-                    MaterialPageRoute(builder: (context) => Login());
                   },
                   child: Text(AppLocalizations.of(context)!.submit),
                 ),

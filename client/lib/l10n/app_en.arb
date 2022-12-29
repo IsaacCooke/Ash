@@ -18,6 +18,7 @@
     "dateOfBirth": "Date of Birth",
     "submit": "Submit",
     "signUp": "Sign Up",
-    "byCheckingThisBoxYouConfirmYouHaveReadThe": "By checking this box, you confirm you have read the",
-    "termsAndConditions": "terms and conditions"
+    "byCheckingThisBoxYouConfirmYouHaveReadThe": "By checking this box, you confirm you have read and agreed to the",
+    "termsAndConditions": "terms and conditions",
+    "confirmPassword": "Confirm Password"
 }

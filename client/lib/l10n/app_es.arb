@@ -15,6 +15,7 @@
     "dateOfBirth": "Fecha de Cumpleaños",
     "submit": "Enviar",
     "signUp": "Inscribirse",
-    "byCheckingThisBoxYouConfirmYouHaveReadThe": "Al marcar esta casilla, confirma que ha leído el",
-    "termsAndConditions": "Términos y condiciones"
+    "byCheckingThisBoxYouConfirmYouHaveReadThe": "Al marcar esta casilla, confirma que ha leído y acepta las",
+    "termsAndConditions": "Términos y condiciones",
+    "confirmPassword": "Confirmar contraseña"
 }

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:client/pages/home.dart';
+import 'package:client/pages/reminders.dart';
+import 'package:client/pages/settings.dart';
+
 class Layout extends StatefulWidget{
   const Layout({super.key});
 
@@ -12,21 +16,10 @@ class Layout extends StatefulWidget{
 class LayoutState extends State<Layout>{
   int _selectedIndex = 0;
 
-  static const TextStyle  optionStyle =
-    TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _options = <Widget>[
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Reminders',
-      style: optionStyle,
-    ),
-    Text(
-      "Settings",
-      style: optionStyle,
-    ),
+    Home(),
+    Reminders(),
+    Settings(),
 
     // All of these text widgets need to be replaced by the necessary page widgets.
   ];
