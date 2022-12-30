@@ -36,6 +36,10 @@ class TermsAndConditions extends StatelessWidget{
               leading: Icon(Icons.fiber_manual_record),
               title: Text("You accept that any data entered into this app can be accessed by the designer, Isaac Cooke, and potentially AQA Exam Board and JCQ regulators"),
             ),
+            const ListTile(
+              leading: Icon(Icons.fiber_manual_record),
+              title: Text("You accept that you are over the age of 13 and you give consent for this product to gather, record and store any and all data you input"),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
@@ -44,7 +48,7 @@ class TermsAndConditions extends StatelessWidget{
                     "End User License Agreement",
                     style: titleStyle,
                   ),
-                  Text("This copy of ASH (\"the product\") and accompanying documentation is licensed and not sold. This product is protected by copyright laws and treaties, as well as laws and treaties relating to other forms of interlecutal property" +
+                  Text("This copy of ASH (\"the product\") and accompanying documentation is licensed and not sold. This product is protected by copyright laws and treaties, as well as laws and treaties relating to other forms of intellectual property"
                   "Isaac Cooke owns intellectual property rights to the product. The Licensee's (\"you\" or \"your\") license to download, use, copy or change the product is subject to these rights and to all te terms and conditions in this end user license agreement (\"agreement\")."
                   ),
                 ],

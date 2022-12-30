@@ -20,5 +20,6 @@
     "signUp": "Sign Up",
     "byCheckingThisBoxYouConfirmYouHaveReadThe": "By checking this box, you confirm you have read and agreed to the",
     "termsAndConditions": "terms and conditions",
-    "confirmPassword": "Confirm Password"
+    "confirmPassword": "Confirm Password",
+    "incorrectEmailAddressOrPassword": "Incorrect email address or password"
 }

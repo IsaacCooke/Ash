@@ -100,16 +100,13 @@ class SignUpState extends State<SignUp>{
                   );
 
                   if(pickedDate != null){
-                    print(pickedDate);
                     String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
-                    print(formattedDate);
-
                     setState(() {
                       _dateController.text = formattedDate;
                       _dateOfBirth = pickedDate;
                     });
                   } else {
-                    print("No date selected");
+                    //TODO Add something here
                   }
                 },
               ),
@@ -147,6 +144,8 @@ class SignUpState extends State<SignUp>{
                       throw Exception("Passwords do not match");
                     }
 
+                    //TODO Need to add verification for age to ensure user is over 13
+
                     User newUser = User(
                       firstName: firstName,
                       lastName: lastName,
@@ -159,6 +158,10 @@ class SignUpState extends State<SignUp>{
 
                     UserService userService = UserService();
                     userService.createUser(newUser);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: ((context) => const Login())),
+                    );
                   },
                   child: Text(AppLocalizations.of(context)!.submit),
                 ),

@@ -9,22 +9,22 @@ import 'package:client/widgets/sign_up.dart';
 import 'global/global.dart' as globals;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
 
     Widget getStartScreen(){
       Widget startScreen;
       if(globals.getIsSignedIn == true){
-        startScreen = Layout();
+        startScreen = const Layout();
       } else {
-        startScreen = SignUp();
+        startScreen = const SignUp();
       }
       return startScreen;
     }
