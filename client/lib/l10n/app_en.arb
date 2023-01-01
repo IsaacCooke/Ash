@@ -24,5 +24,11 @@
     "byCheckingThisBoxYouConfirmYouHaveReadThe": "By checking this box, you confirm you have read and agreed to the",
     "termsAndConditions": "terms and conditions",
     "confirmPassword": "Confirm Password",
-    "incorrectEmailAddressOrPassword": "Incorrect email address or password"
+    "incorrectEmailAddressOrPassword": "Incorrect email address or password",
+
+
+    "hello": "hello",
+    "hi": "hi",
+    "helloHowAreYouToday": "hello, how are you today?",
+    "hiHowAreYouFeelingToday": "hi, how are you feeling today?"
 }

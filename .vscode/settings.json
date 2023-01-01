@@ -3,6 +3,7 @@
         "GCSE",
         "Bson",
         "Npgsql",
-        "Cupertino"
+        "Cupertino",
+        "utils"
     ]
 }

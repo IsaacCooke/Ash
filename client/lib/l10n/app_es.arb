@@ -18,5 +18,10 @@
     "byCheckingThisBoxYouConfirmYouHaveReadThe": "Al marcar esta casilla, confirma que ha leído y acepta las",
     "termsAndConditions": "Términos y condiciones",
     "confirmPassword": "Confirmar contraseña",
-    "incorrectEmailAddressOrPassword": "Dirección de correo electrónico o contraseña incorrecta"
+    "incorrectEmailAddressOrPassword": "Dirección de correo electrónico o contraseña incorrecta",
+
+    "hello": "Hola",
+    "hi": "Saludos",
+    "helloHowAreYouToday": "Hola, cómo estás hoy",
+    "hiHowAreYouFeelingToday": "Saludos como te sientes hoy"
 }
