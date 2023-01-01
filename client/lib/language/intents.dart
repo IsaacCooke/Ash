@@ -1,0 +1,4 @@
+enum Intent {
+  none,
+  greeting,
+}
