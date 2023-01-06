@@ -4,6 +4,7 @@
         "Bson",
         "Npgsql",
         "Cupertino",
-        "utils"
+        "utils",
+        "Newtonsoft"
     ]
 }

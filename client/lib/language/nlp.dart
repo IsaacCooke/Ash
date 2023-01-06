@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:client/l10n/app_localizations_context.dart';
@@ -9,10 +12,28 @@ import 'package:client/main.dart';
 class Language{
   static BuildContext context = navigatorKey.currentState!.context;
 
-  static final greetings = [context.loc.hello, context.loc.helloHowAreYouToday, context.loc.hi, context.loc.hiHowAreYouFeelingToday];
-  static final phrases = [greetings];
+  var phrases = [];
+
+  final String locale = Platform.localeName;
+
 
   parseInput(String input){
+    final String language = locale[0].toLowerCase() + locale[1].toLowerCase();
+
+    switch (language){
+      case "en": {
+        
+      }
+      break;
+      case "es": {
+        
+      }
+      break;
+      default: {
+        
+      }
+    }
+
     Utils utils = Utils();
     input = input.toLowerCase();
     Intents intent = Intents.none;
@@ -20,8 +41,9 @@ class Language{
     for(var phrase in phrases){
       for(var word in phrase){
         switch(phrase){
-          // case greetings: {
-          //   intent = Intents.greeting;
+          case greetings: {
+            
+          }
         }
         break;
       }

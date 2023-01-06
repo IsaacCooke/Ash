@@ -86,10 +86,10 @@ namespace Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Address>> PostAddress(Address address)
         {
-          if (_context.Address == null)
-          {
-              return Problem("Entity set 'Context.Address'  is null.");
-          }
+            if (_context.Address == null)
+            {
+                return Problem("Entity set 'Context.Address' is null.");
+            }
             _context.Address.Add(address);
             await _context.SaveChangesAsync();
 

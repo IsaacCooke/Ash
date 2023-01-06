@@ -29,6 +29,6 @@
 
     "hello": "hello",
     "hi": "hi",
-    "helloHowAreYouToday": "hello, how are you today?",
-    "hiHowAreYouFeelingToday": "hi, how are you feeling today?"
+    "helloHowAreYouToday": "hello how are you today",
+    "hiHowAreYouFeelingToday": "hi how are you feeling today"
 }

@@ -25,10 +25,10 @@ namespace Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reminder>>> GetReminder()
         {
-          if (_context.Reminder == null)
-          {
-              return NotFound();
-          }
+            if (_context.Reminder == null)
+            {
+                return NotFound();
+            }
             return await _context.Reminder.ToListAsync();
         }
 
@@ -36,10 +36,10 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Reminder>> GetReminder(int id)
         {
-          if (_context.Reminder == null)
-          {
-              return NotFound();
-          }
+            if (_context.Reminder == null)
+            {
+                return NotFound();
+            }
             var reminder = await _context.Reminder.FindAsync(id);
 
             if (reminder == null)
@@ -86,10 +86,10 @@ namespace Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Reminder>> PostReminder(Reminder reminder)
         {
-          if (_context.Reminder == null)
-          {
-              return Problem("Entity set 'Context.Reminder'  is null.");
-          }
+            if (_context.Reminder == null)
+            {
+                return Problem("Entity set 'Context.Reminder'  is null.");
+            }
             _context.Reminder.Add(reminder);
             await _context.SaveChangesAsync();
 
