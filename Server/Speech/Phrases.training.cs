@@ -8,7 +8,7 @@ using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
-namespace Server.Language
+namespace Server.Speech
 {
     public partial class Phrases
     {
