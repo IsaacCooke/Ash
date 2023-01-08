@@ -1,4 +1,9 @@
+import 'package:client/main.dart';
 import 'package:flutter/material.dart';
+
+import 'package:client/l10n/app_localizations_context.dart';
+import 'package:client/language/nlp.dart';
+import 'package:client/language/speech_helper.dart';
 
 class Home extends StatefulWidget{
   const Home({super.key});
@@ -8,10 +13,16 @@ class Home extends StatefulWidget{
 }
 
 class HomeState extends State<Home>{
+  @override
+  BuildContext context = navigatorKey.currentState!.context;
+
+  late String text;
   bool isListening = false;
+  Language nlp = Language();
 
   @override
   void initState(){
+    text = context.loc.pressTheButtonAndStartSpeaking;
     super.initState();
   }
 
@@ -30,7 +41,18 @@ class HomeState extends State<Home>{
     );
   }
 
-  Future toggleRecoding() async {
-    return 0;
-  }
+  Future toggleRecoding() => SpeechHelper.toggleRecording(
+    onResult: (text) => setState(() => this.text = text),
+    onListening: (isListening){
+      setState(() {
+        this.isListening = isListening;
+      });
+
+      if(!isListening){
+        Future.delayed(const Duration(seconds: 1), (){
+          nlp.parseInput(text);
+        });
+      }
+    }
+  );
 }

@@ -5,6 +5,7 @@
         "Npgsql",
         "Cupertino",
         "utils",
-        "Newtonsoft"
+        "Newtonsoft",
+        "Waspitol"
     ]
 }

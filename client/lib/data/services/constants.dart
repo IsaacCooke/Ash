@@ -1,4 +1,5 @@
 class ApiConstants{
-  static String baseUrl = '/api';
-  static String usersEndpoint = '/api';
+  static const String baseUrl = '/api';
+  static const String usersEndpoint = '/user';
+  static const String speechEndpoint = "/speech";
 }

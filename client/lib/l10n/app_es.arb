@@ -23,5 +23,6 @@
     "hello": "Hola",
     "hi": "Saludos",
     "helloHowAreYouToday": "Hola cómo estás hoy",
-    "hiHowAreYouFeelingToday": "Saludos como te sientes hoy"
+    "hiHowAreYouFeelingToday": "Saludos como te sientes hoy",
+    "pressTheButtonAndStartSpeaking": "Presiona el botón y empieza a hablar"
 }

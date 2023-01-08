@@ -43,15 +43,15 @@ class LayoutState extends State<Layout>{
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: const Icon(Icons.home),
-            label: AppLocalizations.of(context)!.home,
+            label: AppLocalizations.of(context).home,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.list),
-            label: AppLocalizations.of(context)!.reminders,
+            label: AppLocalizations.of(context).reminders,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.settings),
-            label: AppLocalizations.of(context)!.settings,
+            label: AppLocalizations.of(context).settings,
           ),
         ],
         currentIndex: _selectedIndex,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:client/data/services/speech_service.dart';
 import 'package:client/l10n/app_localizations_context.dart';
 import 'package:client/language/intents.dart';
 import 'package:client/language/utils.dart';
@@ -11,40 +12,31 @@ import 'package:client/main.dart';
 
 class Language{
   static BuildContext context = navigatorKey.currentState!.context;
+  final SpeechService _speechService = SpeechService();
+  Utils utils = Utils();
 
-  var phrases = [];
+  void parseInput(String input) async {
+    int intentNum = await _speechService.getIntentNum(input);
 
-  final String locale = Platform.localeName;
-
-
-  parseInput(String input){
-    final String language = locale[0].toLowerCase() + locale[1].toLowerCase();
-
-    switch (language){
-      case "en": {
-        
+    switch(intentNum){
+      case 0: {
+        utils.fallback();
+        break;
       }
-      break;
-      case "es": {
-        
+      case 1: {
+        utils.greeting();
+        break;
       }
-      break;
+      case 2: {
+        // Reminder
+        break;
+      }
+      case 3: {
+        // Joke
+        break;
+      }
       default: {
-        
-      }
-    }
-
-    Utils utils = Utils();
-    input = input.toLowerCase();
-    Intents intent = Intents.none;
-
-    for(var phrase in phrases){
-      for(var word in phrase){
-        switch(phrase){
-          case greetings: {
-            
-          }
-        }
+        utils.fallback();
         break;
       }
     }
