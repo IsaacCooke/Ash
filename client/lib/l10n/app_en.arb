@@ -29,5 +29,13 @@
     "hi": "hi",
     "helloHowAreYouToday": "hello how are you today",
     "hiHowAreYouFeelingToday": "hi how are you feeling today",
-    "pressTheButtonAndStartSpeaking": "Press the button and start speaking"
+    "pressTheButtonAndStartSpeaking": "Press the button and start speaking",
+    "newReminder": "New Reminder",
+    "title": "title",
+    "dateDue": "date due",
+    "repeat": "repeat",
+    "notes": "notes",
+    "location": "Location",
+    "enterThe": "Enter the",
+    "enterAny": "Enter any"
 }

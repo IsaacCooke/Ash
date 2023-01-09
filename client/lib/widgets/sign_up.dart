@@ -36,7 +36,7 @@ class SignUpState extends State<SignUp>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.signUp),
+        title: Text(AppLocalizations.of(context).signUp),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),

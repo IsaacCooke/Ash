@@ -24,5 +24,14 @@
     "hi": "Saludos",
     "helloHowAreYouToday": "Hola cómo estás hoy",
     "hiHowAreYouFeelingToday": "Saludos como te sientes hoy",
-    "pressTheButtonAndStartSpeaking": "Presiona el botón y empieza a hablar"
+    "pressTheButtonAndStartSpeaking": "Presiona el botón y empieza a hablar",
+    "newReminder": "Nuevo recordatorio",
+
+    "title": "Título",
+    "dateDue": "Fecha de vencimiento",
+    "repeat": "Repetir",
+    "notes": "Notas",
+    "location": "Localización",
+    "enterThe": "Ingrese el",
+    "enterAny": "Introduce cualquier"
 }

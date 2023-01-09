@@ -32,7 +32,7 @@ class Language{
         break;
       }
       case 3: {
-        // Joke
+        utils.joke();
         break;
       }
       default: {
@@ -42,5 +42,3 @@ class Language{
     }
   }
 }
-
-//TODO: Find a better way to do this. I should try to define the statements away from the other localization in a separate dart/ json file. This could also allow arrays and won't annoy the switch statement.
