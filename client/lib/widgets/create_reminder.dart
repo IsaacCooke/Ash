@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:client/data/models/reminder.dart';
 import 'package:client/l10n/app_localizations_context.dart';
 import 'package:client/global/global.dart' as globals;
 import 'package:intl/intl.dart';
@@ -17,7 +18,6 @@ class _CreateReminderState extends State<CreateReminder>{
   final _repeatController = TextEditingController();
   final _dateDueController = TextEditingController();
   final _notesController = TextEditingController();
-  final _locationController = TextEditingController();
   DateTime _dateDue = DateTime.now();
 
   @override
@@ -82,7 +82,26 @@ class _CreateReminderState extends State<CreateReminder>{
                 maxLines: null,
                 keyboardType: TextInputType.multiline,
               ),
-              //TODO Add location text field
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    String title = _titleController.toString();
+                    DateTime dateDue = _dateDue;
+                    //TODO add a repeat field
+                    String notes = _notesController.toString();
+
+                    Reminder newReminder = Reminder(
+                      title: title,
+                      dateDue: dateDue,
+                      repeat: Repeat.none,
+                      notes: notes,
+                    );
+
+                    
+                  },
+                ),
+              )
             ],
           ),
         )

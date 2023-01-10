@@ -33,5 +33,7 @@
     "notes": "Notas",
     "location": "Localización",
     "enterThe": "Ingrese el",
-    "enterAny": "Introduce cualquier"
+    "enterAny": "Introduce cualquier",
+    "latitude": "latitud",
+    "longitude": "longitud"
 }

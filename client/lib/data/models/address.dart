@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:client/data/models/location.dart';
 
 List<Address> addressFromJson(String str) =>
   List<Address>.from(json.decode(str).map((x) => Address.fromJson(x)));
@@ -16,7 +15,6 @@ class Address{
   final String county;
   final String country;
   final String postCode;
-  final Location location;
 
   const Address({
     required this.id,
@@ -26,7 +24,6 @@ class Address{
     required this.county,
     required this.country,
     required this.postCode,
-    required this.location,
   });
 
   factory Address.fromJson(Map<String, dynamic> json) => Address(
@@ -37,7 +34,6 @@ class Address{
     county: json['county'],
     country: json['country'],
     postCode: json['postCode'],
-    location: Location.fromJson(json['location']),
   );
 
   Map<String, dynamic> toJson() => {
@@ -48,6 +44,5 @@ class Address{
     'county': country,
     'country': country,
     'postCode': postCode,
-    'location': location.toJson(),
   };
 }

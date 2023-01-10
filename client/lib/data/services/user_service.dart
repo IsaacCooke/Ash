@@ -22,7 +22,7 @@ class UserService{
 
   Future<User> getUserById(int id) async {
     final response = await http.get(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.usersEndpoint + '/$id')
+      Uri.parse(ApiConstants.baseUrl + ApiConstants.usersEndpoint + '/$id'),
     );
 
     if(response.statusCode == 200){

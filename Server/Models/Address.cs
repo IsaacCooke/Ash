@@ -16,5 +16,4 @@ public class Address
     public string? Country { get; set; }
     [StringLength(maximumLength: 50, MinimumLength = 1)]
     public string? PostCode { get; set; }
-    public Location? Location { get; set; }
 }

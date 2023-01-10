@@ -11,7 +11,6 @@ public class Reminder
     public Repeat? Repeat { get; set; }
     [StringLength(maximumLength: 1023, MinimumLength = 0)]
     public string? Notes { get; set; }
-    public Location? Location { get; set; }
 }
 
 public enum Repeat

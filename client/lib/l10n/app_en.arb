@@ -37,5 +37,7 @@
     "notes": "notes",
     "location": "Location",
     "enterThe": "Enter the",
-    "enterAny": "Enter any"
+    "enterAny": "Enter any",
+    "latitude": "latitude",
+    "longitude": "longitude"
 }

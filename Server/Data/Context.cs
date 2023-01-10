@@ -11,7 +11,6 @@ public class Context: DbContext
 
     public DbSet<User>? User { get; set; }
     public DbSet<Address>? Address { get; set; }
-    public DbSet<Location>? Location { get; set; }
     public DbSet<Reminder>? Reminder { get; set; }
     public DbSet<Settings>? Settings { get; set; }
     
@@ -19,7 +18,6 @@ public class Context: DbContext
     {
         modelBuilder.Entity<User>().ToTable("User");
         modelBuilder.Entity<Address>().ToTable("Address");
-        modelBuilder.Entity<Location>().ToTable("Location");
         modelBuilder.Entity<Reminder>().ToTable("Reminder");
         modelBuilder.Entity<Settings>().ToTable("Settings");
     }
