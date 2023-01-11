@@ -22,7 +22,7 @@ class ReminderService{
 
   Future<Reminder> getReminderById(int id) async {
     final response = await http.get(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + "$id"),
+      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + "/$id"),
     );
 
     if(response.statusCode == 200){
@@ -39,14 +39,39 @@ class ReminderService{
       headers: <String, String>{
         'Content-Type': 'application/json',
       },
-      body: jsonEncode(,String, dynamic>{
-        '' //TODO Finish this
+      body: jsonEncode(<String, dynamic>{
+        'id': "",//TODO Finish this
+        'title': newReminder.title,
+        'dateDue': newReminder.dateDue,
+        'notes': newReminder.notes,
+        'repeat': newReminder.repeat,
       }),
     );
 
     if(response.statusCode == 200){
       print(response);
       return Reminder.fromJson(jsonDecode(response.body));
+    } else {
+        throw Exception("Could not create new reminder");
     }
+  }
+  
+  Future<Reminder> updateReminder(Reminder updatedReminder, int id) async {
+   final response = await http.put(
+     Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + '/$id'),
+     headers: <String, String>{
+      'Content-Type': 'application/json',
+     },
+     body: jsonEncode(<String, dynamic>{
+       //TODO finish this
+     },
+   );
+     
+   if(response.statusCode == 200){
+    print(response);
+    return Reminder.fromJson(jsonDecode(response.body));
+   } else {
+      throw Exception("Could not update reminder"); 
+   }
   }
 }
