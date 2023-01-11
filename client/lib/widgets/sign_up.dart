@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:client/data/models/user.dart';
 import 'package:client/data/services/user_service.dart';
+import 'package:client/l10n/app_localizations_context.dart';
 import 'package:client/widgets/login.dart';
 import 'package:client/widgets/terms_and_conditions.dart';
 
@@ -46,50 +47,50 @@ class SignUpState extends State<SignUp>{
               TextFormField(
                 controller: _firstNameController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.firstName}",
-                  labelText: AppLocalizations.of(context)!.firstName,
+                  hintText: "${context.loc.enterYour} ${context.loc.firstName}",
+                  labelText: context.loc.firstName,
                 ),
               ),
               TextFormField(
                 controller: _lastNameController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.lastName}",
-                  labelText: AppLocalizations.of(context)!.lastName,
+                  hintText: "${context.loc.enterYour} ${context.loc.lastName}",
+                  labelText: context.loc.lastName,
                 ),
               ),
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.email}",
-                  labelText: AppLocalizations.of(context)!.email,
+                  hintText: "${context.loc.enterYour} ${context.loc.email}",
+                  labelText: context.loc.email,
                 ),
               ),
               TextFormField(
                 controller: _phoneNumberController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.phoneNumber}",
-                  labelText: AppLocalizations.of(context)!.phoneNumber,
+                  hintText: "${context.loc.enterYour} ${context.loc.phoneNumber}",
+                  labelText: context.loc.phoneNumber,
                 ),
               ),
               TextFormField(
                 controller: _passwordController1,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.password}",
-                  labelText: AppLocalizations.of(context)!.password,
+                  hintText: "${context.loc.enterYour} ${context.loc.password}",
+                  labelText: context.loc.password,
                 ),
               ),
               TextFormField(
                 controller: _passwordController2,
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.confirmYourPassword,
-                  labelText: AppLocalizations.of(context)!.confirmPassword,
+                  hintText: context.loc.confirmYourPassword,
+                  labelText: context.loc.confirmPassword,
                 ),
               ),
               TextFormField(
                 controller: _dateController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.dateOfBirth}",
-                  labelText: AppLocalizations.of(context)!.dateOfBirth,
+                  hintText: "${context.loc.enterYour} ${context.loc.dateOfBirth}",
+                  labelText: context.loc.dateOfBirth,
                 ),
                 readOnly: true,
                 onTap: () async {
@@ -111,9 +112,9 @@ class SignUpState extends State<SignUp>{
                 },
               ),
               CheckboxListTile(
-                // title: Text("${AppLocalizations.of(context)!.byCheckingThisBoxYouConfirmYouHaveReadThe} ${AppLocalizations.of(context)!.termsAndConditions}"),
+                // title: Text("${context.loc.byCheckingThisBoxYouConfirmYouHaveReadThe} ${context.loc.termsAndConditions}"),
                 title: ElevatedButton(
-                  child: Text("${AppLocalizations.of(context)!.byCheckingThisBoxYouConfirmYouHaveReadThe} ${AppLocalizations.of(context)!.termsAndConditions}"),
+                  child: Text("${context.loc.byCheckingThisBoxYouConfirmYouHaveReadThe} ${context.loc.termsAndConditions}"),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -163,7 +164,7 @@ class SignUpState extends State<SignUp>{
                       MaterialPageRoute(builder: ((context) => const Login())),
                     );
                   },
-                  child: Text(AppLocalizations.of(context)!.submit),
+                  child: Text(context.loc.submit),
                 ),
               )
             ],

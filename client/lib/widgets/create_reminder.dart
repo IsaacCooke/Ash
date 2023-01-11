@@ -1,3 +1,4 @@
+import 'package:client/data/services/reminder_service.dart';
 import 'package:flutter/material.dart';
 
 import 'package:client/data/models/reminder.dart';
@@ -98,8 +99,11 @@ class _CreateReminderState extends State<CreateReminder>{
                       notes: notes,
                     );
 
-                    
+                    ReminderService reminderService = ReminderService();
+                    reminderService.createReminder(newReminder);
+                    Navigator.pop(context);
                   },
+                  child: Text(context.loc.submit),
                 ),
               )
             ],

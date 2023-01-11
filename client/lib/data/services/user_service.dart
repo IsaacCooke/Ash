@@ -40,7 +40,6 @@ class UserService{
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, dynamic>{
-        'id': newUser.id,
         'firstName': newUser.firstName,
         'lastName': newUser.lastName,
         'email': newUser.email,

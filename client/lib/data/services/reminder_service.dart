@@ -40,7 +40,6 @@ class ReminderService{
         'Content-Type': 'application/json',
       },
       body: jsonEncode(<String, dynamic>{
-        'id': "",//TODO Finish this
         'title': newReminder.title,
         'dateDue': newReminder.dateDue,
         'notes': newReminder.notes,
@@ -57,21 +56,40 @@ class ReminderService{
   }
   
   Future<Reminder> updateReminder(Reminder updatedReminder, int id) async {
-   final response = await http.put(
-     Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + '/$id'),
-     headers: <String, String>{
-      'Content-Type': 'application/json',
-     },
-     body: jsonEncode(<String, dynamic>{
-       //TODO finish this
-     },
-   );
-     
-   if(response.statusCode == 200){
-    print(response);
-    return Reminder.fromJson(jsonDecode(response.body));
-   } else {
+    final response = await http.put(
+      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + '/$id'),
+        headers: <String, String>{
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode(<String, dynamic>{
+        'id': updatedReminder.id,
+        'title': updatedReminder.title,
+        'dateDue': updatedReminder.dateDue,
+        'notes': updatedReminder.notes,
+        'repeat': updatedReminder.repeat,
+      }),
+    );
+
+    if(response.statusCode == 200){
+      print(response);
+      return Reminder.fromJson(jsonDecode(response.body));
+    } else {
       throw Exception("Could not update reminder"); 
-   }
+    }
+  }
+
+  Future<Reminder> deleateReminder(int id) async {
+    final http.Response response = await http.delete(
+      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + '/$id'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF',
+      },
+    );
+
+    if(response.statusCode == 200){
+      return Reminder.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception("Failed to delete reminder");
+    }
   }
 }
