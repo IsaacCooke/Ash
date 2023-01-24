@@ -1,3 +1,21 @@
+phrase,val
+hi how are you,1
+greetings,1
+you ok,1
+howdy,1
+sup,1
+you good,1
+gday mate,1
+gday,1
+sup dude,1
+good morning,1
+good afternoon,1
+good evening,1
+pleased to meet you,1
+its good to see you,1
+great to talk to you again,1
+hey,1
+hello,1
 hi,1
 whats new,1
 long time no see,1
@@ -37,3 +55,37 @@ what is for dinner,0
 i come with knives and agony,0
 how do I tell someone I dont want a conversation,0
 say i cant see in german,0
+tell me a fact,4
+give me a random fact,4
+tell me something interesting,4
+what have you learnt today,4
+give a fact,4
+tell me a random fact,4
+can you tell me a fact,4
+can you give me something interesting,4
+can you tell me something engaging,4
+please tell me a fact,4
+give me one detail about the world,4
+please may you tell me a random fact,4
+tell me something about yourself,5
+what are you,5
+please tell me how you were made,5
+give me a fact about how you were made,5
+who made you,5
+who are you,5
+and who are you,5
+can i trust you,6
+are you trustworthy,6
+can i believe everything you say,6
+can i believe you,6
+do you tell the truth,
+are you always telling the truth,6
+is what you say true,6
+can you tell the truth,6
+are you lying to me,6
+do you tell lies,6
+is your infomation misleading,6
+can you give misleading infomation,6
+can you lie,6
+do you mislead me,6
+can i trust everything you say,6
