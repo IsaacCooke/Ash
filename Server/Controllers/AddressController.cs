@@ -25,10 +25,10 @@ namespace Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Address>>> GetAddress()
         {
-          if (_context.Address == null)
-          {
-              return NotFound();
-          }
+            if (_context.Address == null)
+            {
+                return NotFound();
+            }
             return await _context.Address.ToListAsync();
         }
 
@@ -36,11 +36,11 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Address>> GetAddress(int id)
         {
-          if (_context.Address == null)
+            if (_context.Address == null)
           {
               return NotFound();
           }
-            var address = await _context.Address.FindAsync(id);
+          var address = await _context.Address.FindAsync(id);
 
             if (address == null)
             {

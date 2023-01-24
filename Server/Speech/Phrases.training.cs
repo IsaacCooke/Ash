@@ -19,13 +19,12 @@ namespace Server.Speech
         /// <param name="trainData"></param>
         /// <returns></returns>
         public static ITransformer RetrainPipeline(MLContext mlContext, IDataView trainData)
-        {
-            var pipeline = BuildPipeline(mlContext);
+        { 
+            var pipeline = BuildPipeline(mlContext); 
             var model = pipeline.Fit(trainData);
-
             return model;
         }
-
+    
         /// <summary>
         /// build the pipeline that is used from model builder. Use this function to retrain model.
         /// </summary>
@@ -35,12 +34,12 @@ namespace Server.Speech
         {
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"phrase",outputColumnName:@"phrase")      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"phrase"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"val",inputColumnName:@"val"))      
-                                    .Append(mlContext.Transforms.NormalizeMinMax(@"Features", @"Features"))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(new LbfgsMaximumEntropyMulticlassTrainer.Options(){L1Regularization=1F,L2Regularization=1F,LabelColumnName=@"val",FeatureColumnName=@"Features"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
-
+                .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"phrase"}))      
+                .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"val",inputColumnName:@"val"))      
+                .Append(mlContext.Transforms.NormalizeMinMax(@"Features", @"Features"))      
+                .Append(mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.03125F,LabelColumnName=@"val",FeatureColumnName=@"Features"}))      
+                .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
+    
             return pipeline;
         }
     }
