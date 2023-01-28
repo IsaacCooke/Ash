@@ -38,4 +38,21 @@ class Utils{
     await Future.delayed(const Duration(seconds: 1)); // To allow tension to build
     tts.say(replies.punchlines[selection]);
   }
+
+  Future giveFact() async {
+    int selection = _random.nextInt(replies.facts.length);
+    tts.say(replies.facts[selection]);
+  }
+
+  Future selfFact() async {
+    int selection = _random.nextInt(replies.selfFacts.length);
+    tts.say(replies.selfFacts[selection]);
+  }
+
+  Future truth() async {
+    int selection = _random.nextInt(replies.truth.length);
+    tts.say(replies.truth[selection]);
+
+    //TODO find a better way to do this. It needs to be more streamlined
+  }
 }

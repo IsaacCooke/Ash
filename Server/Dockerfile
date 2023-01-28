@@ -1,20 +1,17 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
 WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore
+
 EXPOSE 80
-EXPOSE 443
+EXPOSE 5000
+ENV DOTNET_URLS=http://+5000
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
-COPY ["Ash/Server/Server.csproj", "Ash/Server/"]
-RUN dotnet restore "Server/Server.csproj"
-COPY . .
-WORKDIR "/src/Server"
-RUN dotnet build "Server.csproj" -c Release -o /app/build
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-FROM build AS publish
-RUN dotnet publish "Server.csproj" -c Release -o /app/publish
-
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Server.dll"]

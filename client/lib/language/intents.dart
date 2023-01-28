@@ -3,4 +3,7 @@ enum Intents {
   greeting,
   reminder,
   joke,
+  fact,
+  self,
+  trust,
 }

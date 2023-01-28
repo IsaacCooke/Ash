@@ -28,11 +28,20 @@ class Language{
         break;
       }
       case 2: {
-        // Reminder
+        utils.newReminder();
         break;
       }
       case 3: {
         utils.joke();
+        break;
+      }
+      case 4: {
+        break;
+      }
+      case 5: {
+        break;
+      }
+      case 6: {
         break;
       }
       default: {
