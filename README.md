@@ -12,4 +12,4 @@ The backend has a PostgreSQL database and a speech model to match intents sent t
 This will be added in more detail later. Put simply, it is an AI designed for people working from home for my product design GCSE NEA.
 
 ## Contributing
-As this is a school project, I will not be accpeting pull requests until after I have recieved my GCSE results. However, you are welcome to fork the repo and create your own version as long as you do not violate the licesnse.
+As this is a school project, I will not be accpeting pull requests until after I have recieved my GCSE results. However, you are welcome to fork the repo and create your own version as long as you do not violate the license.
