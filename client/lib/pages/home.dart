@@ -16,13 +16,13 @@ class HomeState extends State<Home>{
   @override
   BuildContext context = navigatorKey.currentState!.context;
 
-  late String text;
+  late String initialText;
   bool isListening = false;
   Language nlp = Language();
 
   @override
   void initState(){
-    text = context.loc.pressTheButtonAndStartSpeaking;
+    initialText = context.loc.pressTheButtonAndStartSpeaking;
     super.initState();
   }
 
@@ -32,6 +32,7 @@ class HomeState extends State<Home>{
       body: SingleChildScrollView(
         reverse: true,
         padding: const EdgeInsets.all(30).copyWith(bottom: 150),
+        child: Text(initialText),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
@@ -42,7 +43,7 @@ class HomeState extends State<Home>{
   }
 
   Future toggleRecoding() => SpeechHelper.toggleRecording(
-    onResult: (text) => setState(() => this.text = text),
+    onResult: (text) => setState(() => this.initialText = text),
     onListening: (isListening){
       setState(() {
         this.isListening = isListening;

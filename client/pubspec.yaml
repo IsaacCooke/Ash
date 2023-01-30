@@ -35,11 +35,13 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # TODO Put this in alphabetical order
+
+  text_to_speech: ^0.2.3
   intl: ^0.17.0
   speech_to_text: ^6.0.0
   cupertino_icons: ^1.0.2
   http: ^0.13.5
-  flutter_tts: ^3.6.1
 
 dev_dependencies:
   flutter_test:

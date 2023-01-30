@@ -8,7 +8,9 @@ class SpeechService{
     final response = await http.post(
       Uri.parse(ApiConstants.baseUrl + ApiConstants.speechEndpoint),
       headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/json',
+        'Accept': '*/*'
       },
       body: jsonEncode(<String, dynamic>{
         'text': text,

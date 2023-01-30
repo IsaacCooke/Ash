@@ -141,9 +141,10 @@ class SignUpState extends State<SignUp>{
                     String password2 = _passwordController2.toString();
                     DateTime dateOfBirth = _dateOfBirth;
 
-                    if(password1 != password2){
-                      throw Exception("Passwords do not match");
-                    }
+                    // if(password1 != password2){
+                    //   print("$password1, $password2");
+                    //   throw Exception("Passwords do not match");
+                    // }
 
                     //TODO Need to add verification for age to ensure user is over 13
 

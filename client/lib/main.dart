@@ -43,7 +43,8 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // Generic English
         Locale('es', ''), // Generic Spanish
       ],
-      home: getStartScreen(),
+      //home: getStartScreen(),
+      home: Layout(),
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       navigatorKey: navigatorKey,
