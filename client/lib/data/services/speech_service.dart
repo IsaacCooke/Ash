@@ -10,7 +10,6 @@ class SpeechService{
       headers: <String, String>{
         "Access-Control-Allow-Origin": "*",
         'Content-Type': 'application/json',
-        'Accept': '*/*'
       },
       body: jsonEncode(<String, dynamic>{
         'text': text,
