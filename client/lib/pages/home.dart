@@ -63,7 +63,7 @@ class HomeState extends State<Home>{
             Container(
               padding: EdgeInsets.all(16),
               child: const Text(
-                "Recognised words:", //TODO Make this part of the localization package
+                "Recognized words:", //TODO Make this part of the localization package
                 style: TextStyle(fontSize: 20.0),
               ),
             ),

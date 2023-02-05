@@ -1,3 +1,4 @@
+import 'package:client/pages/layout.dart';
 import 'package:intl/intl.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -158,11 +159,13 @@ class SignUpState extends State<SignUp>{
                       birthDate: dateOfBirth,
                     );
 
+                    print(newUser);
+
                     UserService userService = UserService();
                     userService.createUser(newUser);
-                    Navigator.pushReplacement(
+                    Navigator.pushReplacement<void, void>(
                       context,
-                      MaterialPageRoute(builder: ((context) => const Login())),
+                      MaterialPageRoute<void>(builder: ((context) => const Layout())),
                     );
                   },
                   child: Text(context.loc.submit),

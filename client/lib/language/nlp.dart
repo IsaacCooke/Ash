@@ -36,12 +36,15 @@ class Language{
         break;
       }
       case 4: {
+        utils.giveFact();
         break;
       }
       case 5: {
+        utils.selfFact();
         break;
       }
       case 6: {
+        utils.truth();
         break;
       }
       default: {

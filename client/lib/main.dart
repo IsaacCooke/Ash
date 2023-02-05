@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) =>
-        AppLocalizations.of(context)!.ash,
+        AppLocalizations.of(context).ash,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -43,8 +43,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // Generic English
         Locale('es', ''), // Generic Spanish
       ],
-      //home: getStartScreen(),
-      home: Layout(),
+      home: getStartScreen(),
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       navigatorKey: navigatorKey,

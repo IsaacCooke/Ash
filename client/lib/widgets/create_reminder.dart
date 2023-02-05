@@ -40,7 +40,7 @@ class _CreateReminderState extends State<CreateReminder>{
               TextFormField(
                 controller: _titleController,
                 decoration: InputDecoration(
-                  hintText: context.loc.enterThe + context.loc.title,
+                  hintText: context.loc.enterThe + " " + context.loc.title,
                   labelText: context.loc.title,
                 ),
               ),
@@ -51,7 +51,7 @@ class _CreateReminderState extends State<CreateReminder>{
               TextFormField(
                 controller: _dateDueController,
                 decoration: InputDecoration(
-                  hintText: context.loc.enterThe + context.loc.dateDue,
+                  hintText: context.loc.enterThe + " " + context.loc.dateDue,
                   labelText: context.loc.dateDue,
                 ),
                 readOnly: true,
@@ -70,14 +70,14 @@ class _CreateReminderState extends State<CreateReminder>{
                       _dateDue = pickedDate;
                     });
                   } else {
-                    //TODO Add something else here (same as sign_up.dart)
+                    //TODO Add something else here (same as sign_up.dart) Really helpful past Isaac
                   }
                 },
               ),
               TextFormField(
                 controller: _notesController,
                 decoration: InputDecoration(
-                  hintText: context.loc.enterAny + context.loc.notes,
+                  hintText: context.loc.enterAny + " " + context.loc.notes,
                   labelText: context.loc.notes
                 ),
                 maxLines: null,

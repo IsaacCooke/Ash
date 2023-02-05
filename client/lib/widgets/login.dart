@@ -17,13 +17,13 @@ class Login extends StatefulWidget{
 class LoginState extends State<Login>{
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  String? errorMessage;
+  String errorMessage = "";
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.login),
+        title: Text(AppLocalizations.of(context).login),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),
