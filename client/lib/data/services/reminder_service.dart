@@ -34,6 +34,7 @@ class ReminderService{
   }
 
   Future<Reminder> createReminder(Reminder newReminder) async {
+    print(newReminder);
     final response = await http.post(
       Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint),
       headers: <String, String>{

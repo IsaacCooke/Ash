@@ -39,5 +39,6 @@
     "enterThe": "Enter the",
     "enterAny": "Enter any",
     "latitude": "latitude",
-    "longitude": "longitude"
+    "longitude": "longitude",
+    "query": "query"
 }

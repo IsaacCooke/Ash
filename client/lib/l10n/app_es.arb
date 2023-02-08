@@ -35,5 +35,6 @@
     "enterThe": "Ingrese el",
     "enterAny": "Introduce cualquier",
     "latitude": "latitud",
-    "longitude": "longitud"
+    "longitude": "longitud",
+    "query": "consulta"
 }

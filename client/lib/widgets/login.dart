@@ -33,20 +33,20 @@ class LoginState extends State<Login>{
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.email}",
-                  labelText: AppLocalizations.of(context)!.email,
+                  hintText: "${AppLocalizations.of(context).enterYour} ${AppLocalizations.of(context).email}",
+                  labelText: AppLocalizations.of(context).email,
                 ),
               ),
               TextFormField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context)!.enterYour} ${AppLocalizations.of(context)!.password}",
-                  labelText: AppLocalizations.of(context)!.password,
+                  hintText: "${AppLocalizations.of(context).enterYour} ${AppLocalizations.of(context).password}",
+                  labelText: AppLocalizations.of(context).password,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(30),
-                child: Text(errorMessage!),
+                child: Text(errorMessage),
               ),
               Padding(
                 padding: const EdgeInsets.all(30),
@@ -70,11 +70,11 @@ class LoginState extends State<Login>{
                         // Failure
                       }
                       setState(() {
-                        errorMessage = AppLocalizations.of(context)!.incorrectEmailAddressOrPassword;
+                        errorMessage = AppLocalizations.of(context).incorrectEmailAddressOrPassword;
                       });
                     }
                   },
-                  child: Text(AppLocalizations.of(context)!.submit),
+                  child: Text(AppLocalizations.of(context).submit),
                 ),
               )
             ],
