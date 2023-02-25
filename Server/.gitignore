@@ -1,5 +1,3 @@
 /bin
 /obj
-appsettings.json
 .env
-docker-compose.yml

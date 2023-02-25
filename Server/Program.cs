@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>(options =>
-//TODO Change this to the other database
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DevDatabase")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
 
 builder.Services.AddCors(options =>
 {
