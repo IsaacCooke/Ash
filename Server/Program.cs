@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Server.Data;
 using Server.Models;
 
+var _corsPolicy = "CorsPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Context>(options =>
 //TODO Change this to the other database
     options.UseNpgsql(builder.Configuration.GetConnectionString("DevDatabase")));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: _corsPolicy,
+        policy =>
+        {
+            policy.WithOrigins(
+                "http://localhost:52787",
+                "http://localhost:59771/"
+            ).AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+        });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,6 +42,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 using (var scope = app.Services.CreateScope())
 {

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:client/data/models/reminder.dart';
 import 'package:client/l10n/app_localizations_context.dart';
-import 'package:client/global/global.dart' as globals;
 import 'package:intl/intl.dart';
 
 
@@ -27,6 +26,7 @@ class _CreateReminderState extends State<CreateReminder>{
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
@@ -40,18 +40,17 @@ class _CreateReminderState extends State<CreateReminder>{
               TextFormField(
                 controller: _titleController,
                 decoration: InputDecoration(
-                  hintText: context.loc.enterThe + " " + context.loc.title,
+                  hintText: "${context.loc.enterThe} ${context.loc.title}",
                   labelText: context.loc.title,
                 ),
               ),
               TextFormField(
                 controller: _repeatController,
-                //TODO Do something here so the user gets an option not just a text box
               ),
               TextFormField(
                 controller: _dateDueController,
                 decoration: InputDecoration(
-                  hintText: context.loc.enterThe + " " + context.loc.dateDue,
+                  hintText: "${context.loc.enterThe} ${context.loc.dateDue}",
                   labelText: context.loc.dateDue,
                 ),
                 readOnly: true,
@@ -61,7 +60,7 @@ class _CreateReminderState extends State<CreateReminder>{
                     initialDate: DateTime.now(),
                     firstDate: DateTime.now(),
                     lastDate: DateTime(2101),
-                  ); //TODO Make this a date and time thing. Atm it's just date
+                  );
 
                   if(pickedDate != null){
                     String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
@@ -70,14 +69,14 @@ class _CreateReminderState extends State<CreateReminder>{
                       _dateDue = pickedDate;
                     });
                   } else {
-                    //TODO Add something else here (same as sign_up.dart) Really helpful past Isaac
+                    throw Exception("That's not a valid date");
                   }
                 },
               ),
               TextFormField(
                 controller: _notesController,
                 decoration: InputDecoration(
-                  hintText: context.loc.enterAny + " " + context.loc.notes,
+                  hintText: "${context.loc.enterAny} ${context.loc.notes}",
                   labelText: context.loc.notes
                 ),
                 maxLines: null,
@@ -89,7 +88,6 @@ class _CreateReminderState extends State<CreateReminder>{
                   onPressed: () {
                     String title = _titleController.toString();
                     DateTime dateDue = _dateDue;
-                    //TODO add a repeat field
                     String notes = _notesController.toString();
 
                     Reminder newReminder = Reminder(

@@ -12,9 +12,8 @@ class ReminderService{
     );
 
     if(response.statusCode == 200){
-      List<Reminder> _reminders = reminderFromJson(response.body);
-      print(_reminders);
-      return _reminders;
+      List<Reminder> reminders = reminderFromJson(response.body);
+      return reminders;
     } else {
       throw Exception("Failed to load reminders");
     }
@@ -22,11 +21,10 @@ class ReminderService{
 
   Future<Reminder> getReminderById(int id) async {
     final response = await http.get(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + "/$id"),
+      Uri.parse("${ApiConstants.baseUrl}${ApiConstants.remindersEndpoint}/$id"),
     );
 
     if(response.statusCode == 200){
-      print(response);
       return Reminder.fromJson(jsonDecode(response.body));
     } else {
       throw Exception("Failed to load reminder with id $id"); //! Need to hide id before the final build
@@ -34,7 +32,6 @@ class ReminderService{
   }
 
   Future<Reminder> createReminder(Reminder newReminder) async {
-    print(newReminder);
     final response = await http.post(
       Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint),
       headers: <String, String>{
@@ -49,7 +46,6 @@ class ReminderService{
     );
 
     if(response.statusCode == 200){
-      print(response);
       return Reminder.fromJson(jsonDecode(response.body));
     } else {
         throw Exception("Could not create new reminder");
@@ -58,7 +54,7 @@ class ReminderService{
   
   Future<Reminder> updateReminder(Reminder updatedReminder, int id) async {
     final response = await http.put(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + '/$id'),
+      Uri.parse('${ApiConstants.baseUrl}${ApiConstants.remindersEndpoint}/$id'),
         headers: <String, String>{
         'Content-Type': 'application/json',
       },
@@ -72,16 +68,15 @@ class ReminderService{
     );
 
     if(response.statusCode == 200){
-      print(response);
       return Reminder.fromJson(jsonDecode(response.body));
     } else {
       throw Exception("Could not update reminder"); 
     }
   }
 
-  Future<Reminder> deleateReminder(int id) async {
+  Future<Reminder> deleteReminder(int id) async {
     final http.Response response = await http.delete(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.remindersEndpoint + '/$id'),
+      Uri.parse('${ApiConstants.baseUrl}${ApiConstants.remindersEndpoint}/$id'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF',
       },

@@ -12,9 +12,8 @@ class UserService{
     );
     
     if(response.statusCode == 200){
-      List<User> _users = userFromJson(response.body);
-      print(_users);
-      return _users;
+      List<User> users = userFromJson(response.body);
+      return users;
     } else {
       throw Exception("Failed to load users");
     }
@@ -22,14 +21,13 @@ class UserService{
 
   Future<User> getUserById(int id) async {
     final response = await http.get(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.usersEndpoint + '/$id'),
+      Uri.parse('${ApiConstants.baseUrl}${ApiConstants.usersEndpoint}/$id'),
     );
 
     if(response.statusCode == 200){
-      print(response);
       return User.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception("Failed to load user with is $id"); //! Needs to hide id before final build
+      throw Exception("Failed to load user.");
     }
   }
 
@@ -63,7 +61,7 @@ class UserService{
 
   Future<User> updateUser(int id, User updatedUser) async {
     final response = await http.put(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.usersEndpoint + "/$id"),
+      Uri.parse("${ApiConstants.baseUrl}${ApiConstants.usersEndpoint}/$id"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -92,7 +90,7 @@ class UserService{
 
   Future<User> deleteUser(int id) async {
     final http.Response response = await http.delete(
-      Uri.parse(ApiConstants.baseUrl + ApiConstants.usersEndpoint + "/$id"),
+      Uri.parse("${ApiConstants.baseUrl}${ApiConstants.usersEndpoint}/$id"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

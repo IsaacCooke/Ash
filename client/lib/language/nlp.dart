@@ -1,12 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import 'package:client/data/services/speech_service.dart';
-import 'package:client/l10n/app_localizations_context.dart';
-import 'package:client/language/intents.dart';
 import 'package:client/language/utils.dart';
 import 'package:client/main.dart';
 

@@ -16,9 +16,9 @@ public class Context: DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>().ToTable("User");
-        modelBuilder.Entity<Address>().ToTable("Address");
-        modelBuilder.Entity<Reminder>().ToTable("Reminder");
-        modelBuilder.Entity<Settings>().ToTable("Settings");
+        modelBuilder.Entity<User>()?.ToTable("User");
+        modelBuilder.Entity<Address>()?.ToTable("Address");
+        modelBuilder.Entity<Reminder>()?.ToTable("Reminder");
+        modelBuilder.Entity<Settings>()?.ToTable("Settings");
     }
 }

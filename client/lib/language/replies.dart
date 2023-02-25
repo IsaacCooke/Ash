@@ -5,5 +5,5 @@ class Replies{
   final punchlines = ['The Waspitol'];
   final facts = ['The first fingerprint testing by police in the UK was carried out in 1901'];
   final selfFacts = ['I was designed as part of product design coursework'];
-  final truth = ['No, due to the fact I gather infomation from the internet, you can\'t trust everything I say'];
+  final truth = ['No, due to the fact I gather information from the internet, you can\'t trust everything I say'];
 }

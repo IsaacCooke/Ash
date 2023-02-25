@@ -19,7 +19,6 @@ class SpeechService{
     if(response.statusCode == 200){
       var data = json.decode(response.body);
       int intentNum = data['intentNum'];
-      print("Intent Number: $intentNum");
       return intentNum;
     } else {
       throw Exception("Failed to get an answer from the server");

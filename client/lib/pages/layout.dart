@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:client/l10n/app_localizations_context.dart';
 import 'package:client/pages/home.dart';
 import 'package:client/pages/reminders.dart';
 import 'package:client/pages/settings.dart';
@@ -34,7 +33,7 @@ class LayoutState extends State<Layout>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.ash),
+        title: Text(context.loc.ash),
       ),
       body: Center(
         child: _options.elementAt(_selectedIndex),
@@ -43,15 +42,15 @@ class LayoutState extends State<Layout>{
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: const Icon(Icons.home),
-            label: AppLocalizations.of(context).home,
+            label: context.loc.home,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.list),
-            label: AppLocalizations.of(context).reminders,
+            label: context.loc.reminders,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.settings),
-            label: AppLocalizations.of(context).settings,
+            label: context.loc.settings,
           ),
         ],
         currentIndex: _selectedIndex,

@@ -16,7 +16,7 @@
         </intent>
     </queries>
    <application
-        android:label="client"
+        android:label="Ash"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

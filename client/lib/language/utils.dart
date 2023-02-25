@@ -14,8 +14,6 @@ class Utils {
   TextToSpeech tts = TextToSpeech();
   BuildContext context = navigatorKey.currentState!.context;
 
-  //TODO increase the range of responses.
-
   Future fallback() async {
     int selection = _random.nextInt(replies.fallbackResponses.length);
     tts.speak(replies.fallbackResponses[selection]);
@@ -53,7 +51,5 @@ class Utils {
   Future truth() async {
     int selection = _random.nextInt(replies.truth.length);
     tts.speak(replies.truth[selection]);
-
-    //TODO find a better way to do this. It needs to be more streamlined
   }
 }

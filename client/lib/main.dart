@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         Locale('de', ''), // Generic German
         Locale('fr', ''), // Generic French
       ],
-      home: Layout(),
+      home: getStartScreen(),
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       navigatorKey: navigatorKey,

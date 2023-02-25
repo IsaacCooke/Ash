@@ -1,13 +1,11 @@
 import 'package:client/pages/layout.dart';
 import 'package:intl/intl.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import 'package:client/data/models/user.dart';
 import 'package:client/data/services/user_service.dart';
 import 'package:client/l10n/app_localizations_context.dart';
-import 'package:client/widgets/login.dart';
 import 'package:client/widgets/terms_and_conditions.dart';
 
 class SignUp extends StatefulWidget{
@@ -38,7 +36,7 @@ class SignUpState extends State<SignUp>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).signUp),
+        title: Text(context.loc.signUp),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),
@@ -107,13 +105,10 @@ class SignUpState extends State<SignUp>{
                       _dateController.text = formattedDate;
                       _dateOfBirth = pickedDate;
                     });
-                  } else {
-                    //TODO Add something here
                   }
                 },
               ),
               CheckboxListTile(
-                // title: Text("${context.loc.byCheckingThisBoxYouConfirmYouHaveReadThe} ${context.loc.termsAndConditions}"),
                 title: ElevatedButton(
                   child: Text("${context.loc.byCheckingThisBoxYouConfirmYouHaveReadThe} ${context.loc.termsAndConditions}"),
                   onPressed: () {
@@ -142,12 +137,9 @@ class SignUpState extends State<SignUp>{
                     String password2 = _passwordController2.toString();
                     DateTime dateOfBirth = _dateOfBirth;
 
-                    // if(password1 != password2){
-                    //   print("$password1, $password2");
-                    //   throw Exception("Passwords do not match");
-                    // }
-
-                    //TODO Need to add verification for age to ensure user is over 13
+                    if(password1 != password2){
+                      throw Exception("Passwords do not match");
+                    }
 
                     User newUser = User(
                       firstName: firstName,
@@ -159,7 +151,6 @@ class SignUpState extends State<SignUp>{
                       birthDate: dateOfBirth,
                     );
 
-                    print(newUser);
 
                     UserService userService = UserService();
                     userService.createUser(newUser);

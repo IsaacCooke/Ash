@@ -1,9 +1,9 @@
 import 'package:client/pages/layout.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import 'package:client/global/global.dart' as globals;
 
+import 'package:client/l10n/app_localizations_context.dart';
 import 'package:client/data/models/user.dart';
 import 'package:client/data/services/user_service.dart';
 
@@ -19,11 +19,18 @@ class LoginState extends State<Login>{
   final _passwordController = TextEditingController();
   String errorMessage = "";
 
+  void nextPage(BuildContext context){
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: ((context) => const Layout())),
+    );
+  }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).login),
+        title: Text(context.loc.login),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),
@@ -33,15 +40,15 @@ class LoginState extends State<Login>{
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context).enterYour} ${AppLocalizations.of(context).email}",
-                  labelText: AppLocalizations.of(context).email,
+                  hintText: "${context.loc.enterYour} ${context.loc.email}",
+                  labelText: context.loc.email,
                 ),
               ),
               TextFormField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  hintText: "${AppLocalizations.of(context).enterYour} ${AppLocalizations.of(context).password}",
-                  labelText: AppLocalizations.of(context).password,
+                  hintText: "${context.loc.enterYour} ${context.loc.password}",
+                  labelText: context.loc.password,
                 ),
               ),
               Padding(
@@ -62,19 +69,16 @@ class LoginState extends State<Login>{
                       if((user.email == email) && (user.password == password)){
                         globals.setUser = user;
 
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: ((context) => const Layout())),
-                        );
+                        nextPage(context);
                       } else{
                         // Failure
                       }
                       setState(() {
-                        errorMessage = AppLocalizations.of(context).incorrectEmailAddressOrPassword;
+                        errorMessage = context.loc.incorrectEmailAddressOrPassword;
                       });
                     }
                   },
-                  child: Text(AppLocalizations.of(context).submit),
+                  child: Text(context.loc.submit),
                 ),
               )
             ],

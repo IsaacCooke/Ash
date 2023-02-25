@@ -30,14 +30,30 @@ class HomeState extends State<Home>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: TextFormField(
-          controller: _speechController,
-          decoration: InputDecoration(
-            hintText: "${context.loc.enterYour} ${context.loc.query}",
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextFormField(
+              controller: _speechController,
+              decoration: InputDecoration(
+                hintText: "${context.loc.enterYour} ${context.loc.query}",
+              ),
+            ),
           ),
-        ),
+          Padding(
+              padding: const EdgeInsets.all(16),
+              child: ElevatedButton(
+                onPressed: (){
+                  nlp.parseInput(_speechController.toString());
+                  setState(() {
+                    _speechController.clear();
+                  });
+                },
+                child: Text(context.loc.submit),
+              ),
+          )
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
