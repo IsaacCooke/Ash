@@ -13,3 +13,6 @@ This will be added in more detail later. Put simply, it is an AI designed for pe
 
 ## Contributing
 As this is a school project, I will not be accpeting pull requests until after I have recieved my GCSE results. However, you are welcome to fork the repo and create your own version as long as you do not violate the license.
+
+## Outcome
+I submitted the project for marking in April 2023. I recieved a grade 9 for it. I am now open to accpeting pull requests if there is anything you would like to add. However, I will no longer contribute to the project as I have taken it as far as I want it to go.
